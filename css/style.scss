@@ -1,0 +1,306 @@
+@import "_variable.scss";
+* {
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-family: "Montserrat";
+}
+.nav-section {
+  display: flex;
+  justify-content: space-between;
+  height: 20vh;
+  @include media("<phone") {
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+}
+.logo {
+  @include media("<phone") {
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 100%;
+  }
+  &-img {
+    width: 5vw;
+    margin: 2vw;
+    @include media(">=phone", "<=tablet") {
+      width: 10vw;
+      margin: 4vw;
+    }
+    @include media("<phone") {
+      width: 13vw;
+    }
+  }
+}
+.counter {
+  margin-top: 2vw;
+  @include media("<phone") {
+    margin: 0 auto;
+    height: 100%;
+  }
+}
+.times {
+  display: flex;
+  justify-content: flex-end;
+
+  .number {
+    -webkit-text-stroke: 2px $yellow;
+    color: transparent;
+    font-size: 3rem;
+    width: 2.2vw;
+    @include media("<=desktop") {
+      width: 3.2vw;
+    }
+    @include media(">=phone", "<=tablet") {
+      font-size: 3em;
+      width: 6vw;
+      text-align: center;
+    }
+    @include media("<phone") {
+      font-size: 2rem;
+      width: 6vw;
+      text-align: center;
+    }
+  }
+  .margin-right {
+    margin-right: 2vw;
+    @include media("<phone") {
+      margin-right: 4vw;
+    }
+  }
+  .margin-left {
+    margin-left: 2vw;
+    @include media("<phone") {
+      margin-left: 4vw;
+    }
+  }
+}
+
+.timesTexts {
+  font-size: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  color: $primary;
+  font-family: "Montserrat";
+  font-weight: light;
+  @include media("<phone") {
+    font-size: 15px;
+  }
+  @include media(">=phone", "<=tablet") {
+    // font-size: 20px;
+  }
+  .text {
+    width: 4.4vw;
+    text-align: center;
+    @include media("<=desktop") {
+      width: 6.4vw;
+    }
+    @include media(">=phone", "<=tablet") {
+      width: 12vw;
+    }
+    @include media("<phone") {
+      width: 18vw;
+    }
+  }
+  .margin {
+    margin-right: 2vw;
+    margin-left: 2vw;
+    @include media("<phone") {
+      margin-right: 1vw;
+      margin-left: 1vw;
+    }
+  }
+}
+body {
+  background: $white;
+}
+.coming-soon {
+  color: $primary;
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: center;
+  width: 100vw;
+  @include media("<phone") {
+    margin-top: 10vh;
+  }
+
+  .coming {
+    margin: 0 auto;
+    font-size: 10rem;
+    font-family: "Montserrat";
+    font-weight: bold;
+    @include media("<phone") {
+      font-size: 20vw;
+    }
+    @include media(">=phone", "<=tablet") {
+      font-size: 7rem;
+    }
+  }
+  .soon {
+    margin: 0 auto;
+    font-size: 100px;
+    font-family: "Montserrat";
+    color: $white;
+    z-index: 5555;
+    position: relative;
+    top: -6vh;
+    height: 23vh;
+    width: 399px;
+    @include media(">=phone", "<=tablet") {
+      font-size: 6rem;
+    }
+    @include media("<phone") {
+      font-size: 17vw;
+      width: 100%;
+      top: 2vh;
+      height: 25vh;
+    }
+  }
+}
+
+.oops {
+  font-family: "Montserrat";
+  font-weight: light;
+  text-align: center;
+  font-size: 1.5em;
+  color: $primary;
+  margin-top: -4vh;
+  margin: 0 auto;
+  width: 70%;
+  @include media(">=phone", "<=tablet") {
+    font-size: 1rem;
+  }
+  @include media("<phone") {
+    margin: 22px;
+    font-size: 1rem;
+    margin-top: -3.9vh;
+  }
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  @include media(">=phone", "<=tablet") {
+    margin-top: 5vh;
+  }
+  .icon {
+    margin: 1vw;
+    width: 2.5vw;
+    height: 2.5vw;
+    @include media("<=phone") {
+      width: 6.5vw;
+      height: 6.5vw;
+    }
+    @include media(">=phone", "<=tablet") {
+      width: 4.5vw;
+      height: 4.5vw;
+    }
+  }
+}
+
+//motion
+.move {
+  animation: move ease-in-out 1s infinite;
+}
+#clock {
+  height: 8vh;
+  line-height: 7vh;
+  overflow: hidden;
+  position: relative;
+  @include media("<phone") {
+    line-height: 9vh;
+  }
+}
+@keyframes move {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-25vh);
+  }
+}
+
+.background {
+  width: 100vw;
+  position: relative;
+}
+
+.motion {
+  animation: motion 100s infinite;
+  z-index: -1;
+  position: absolute;
+  top: 100px;
+  overflow: hidden;
+}
+@keyframes motion {
+  from {
+    top: 100vh;
+  }
+  to {
+    top: -1000vh;
+  }
+}
+
+.wordCon {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 145px;
+    height: 145px;
+    background-color: $yellow;
+    border-radius: 50%;
+    right: 47px;
+    top: 52%;
+    transition: 1s 0.2s;
+    transform: translate(20%, -50%) scale(0);
+    @include media("<=tablet") {
+      animation: none;
+      transition: none;
+      display: none;
+    }
+  }
+  .word {
+    text-align: center;
+    -webkit-text-stroke: 2px $primary;
+    color: transparent;
+    background: radial-gradient(
+      circle at center,
+      transparent,
+      transparent -5%,
+      $secondary 1.2%,
+      $secondary 66%,
+      transparent 66.2%,
+      transparent 98%
+    );
+    position: relative;
+    z-index: 10;
+    transition: 1s;
+    background-position: 100% 100%;
+    background-size: 300% 300%;
+    background-repeat: no-repeat;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    padding-top: 10px;
+  }
+  &:hover {
+    .word {
+      background-position: 292.5% 100%;
+      background-size: 84.4% 61%;
+      @include media("<=tablet") {
+        background-position: inherit;
+        background-size: 100%;
+      }
+    }
+    &::before {
+      transform: translate(20%, -50%) scale(1);
+    }
+  }
+}
