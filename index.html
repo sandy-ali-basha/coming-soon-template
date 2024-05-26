@@ -11,27 +11,7 @@
   <body>
     <section class="nav-section">
       <div class="logo">
-        <img src="./img/logo.png" alt="" class="logo-img" />
-      </div>
-      <div class="counter">
-        <div class="times" id="clock">
-          <div class="number margin-left"><div>0</div></div>
-          <div class="number margin-right"><div>0</div></div>
-          <div class="number margin-left"><div>0</div></div>
-          <div class="number margin-right"><div>0</div></div>
-
-          <div class="number margin-left"><div>0</div></div>
-          <div class="number margin-right"><div>0</div></div>
-
-          <div class="number margin-left"><div>0</div></div>
-          <div class="number margin-right"><div>0</div></div>
-        </div>
-        <div class="timesTexts">
-          <div class="text margin">Days</div>
-          <div class="text margin">Hours</div>
-          <div class="text margin">Minutes</div>
-          <div class="text margin">Seconds</div>
-        </div>
+        <img src="./img/logo.jpeg" alt="" class="logo-img" />
       </div>
     </section>
     <section class="coming-soon">
@@ -39,28 +19,40 @@
       <span class="soon wordCon">
         <div class="word">Soon</div>
       </span>
+      <div class="oops">
+        OOPS..You caught us!<br />
+        We're just updating our site, it should be back up and running soon. In
+        the meantime, check out the cool things on our social media.
+      </div>
     </section>
-    <div class="oops">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ab sit
-      eligendi ut perferendis laudantium in accusamus corporis iste libero,
-      voluptatem enim inventore mollitia facere voluptatibus delectus iusto!
-      Fuga, labore.
-    </div>
-
     <div class="motion">
-      <img class="background bg1" src="img\Home background.svg" alt="" />
-      <img class="background bg2" src="img\Home background.svg" alt="" />
-      <img class="background bg3" src="img\Home background.svg" alt="" />
-      <img class="background bg3" src="img\Home background.svg" alt="" />
-      <img class="background bg3" src="img\Home background.svg" alt="" />
-      <img class="background bg3" src="img\Home background.svg" alt="" />
-      <img class="background bg3" src="img\Home background.svg" alt="" />
-      <img class="background bg3" src="img\Home background.svg" alt="" />
-      <img class="background bg3" src="img\Home background.svg" alt="" />
-      <img class="background bg3" src="img\Home background.svg" alt="" />
+      <img class="background bg1" src="img\Home background.png" alt="" />
+      <img class="background bg2" src="img\Home background.png" alt="" />
+      <img class="background bg3" src="img\Home background.png" alt="" />
+      <img class="background bg3" src="img\Home background.png" alt="" />
+      <img class="background bg3" src="img\Home background.png" alt="" />
+      <img class="background bg3" src="img\Home background.png" alt="" />
+      <img class="background bg3" src="img\Home background.png" alt="" />
+      <img class="background bg3" src="img\Home background.png" alt="" />
+      <img class="background bg3" src="img\Home background.png" alt="" />
+      <img class="background bg3" src="img\Home background.png" alt="" />
     </div>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/countdown.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script src="js/countdown.js"></script> -->
     <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        var countdownDate = "2024/08/01 13:00:00";
+
+        $('#clock').countdown(countdownDate, function(event) {
+          $(this).html(event.strftime(''
+            + '<span class="number days">%-D</span> days '
+            + '<span class="number hours">%H</span> hours '
+            + '<span class="number minutes">%M</span> minutes '
+            + '<span class="number seconds">%S</span> seconds'));
+        });
+      });
+    </script>
   </body>
 </html>

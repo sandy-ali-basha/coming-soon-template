@@ -1,19 +1,4 @@
-@font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Regular.eot");
-  src: url("../fonts/Montserrat-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff"), url("../fonts/Montserrat-Regular.ttf") format("truetype"), url("../fonts/Montserrat-Regular.svg#Montserrat-Regular") format("svg");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Light.eot");
-  src: url("../fonts/Montserrat-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff"), url("../fonts/Montserrat-Light.ttf") format("truetype"), url("../fonts/Montserrat-Light.svg#Montserrat-Light") format("svg");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap");
 /**
 *
 * Testing
@@ -24,7 +9,11 @@
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
-  font-family: "Montserrat";
+  font-family: "Reddit Sans", sans-serif;
+}
+
+body {
+  height: 100vh;
 }
 
 .nav-section {
@@ -78,10 +67,9 @@
   justify-content: flex-end;
 }
 .times .number {
-  -webkit-text-stroke: 2px #f5d94b;
+  -webkit-text-stroke: 2px #628eb3;
   color: transparent;
   font-size: 3rem;
-  width: 2.2vw;
 }
 @media (max-width: 1024px) {
   .times .number {
@@ -124,7 +112,7 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  color: #b67352;
+  color: #5c2c8f;
   font-family: "Montserrat";
   font-weight: light;
 }
@@ -168,12 +156,18 @@ body {
 }
 
 .coming-soon {
-  color: #b67352;
+  color: #5c2c8f;
   display: flex;
   flex-direction: column;
   justify-content: baseline;
   align-items: center;
   width: 100vw;
+  -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
+  border: 1px solid rgba(222, 222, 222, 0.2);
+  box-shadow: 0px 0px 14px rgba(54, 52, 52, 0.2509803922);
+  background: rgba(243, 255, 255, 0.2);
+  padding: 1rem;
 }
 @media (max-width: 449px) {
   .coming-soon {
@@ -182,7 +176,7 @@ body {
 }
 .coming-soon .coming {
   margin: 0 auto;
-  font-size: 10rem;
+  font-size: 8rem;
   font-family: "Montserrat";
   font-weight: bold;
 }
@@ -225,11 +219,11 @@ body {
   font-family: "Montserrat";
   font-weight: light;
   text-align: center;
-  font-size: 1.5em;
-  color: #b67352;
-  margin-top: -4vh;
+  font-size: 1rem;
+  color: rgb(31, 31, 31);
   margin: 0 auto;
-  width: 70%;
+  width: 60%;
+  margin-top: -5vh;
 }
 @media (min-width: 450px) and (max-width: 768px) {
   .oops {
@@ -303,7 +297,7 @@ body {
 }
 
 .motion {
-  animation: motion 100s infinite;
+  animation: motion 100s infinite linear;
   z-index: -1;
   position: absolute;
   top: 100px;
@@ -312,7 +306,7 @@ body {
 
 @keyframes motion {
   from {
-    top: 100vh;
+    top: 0vh;
   }
   to {
     top: -1000vh;
@@ -326,7 +320,7 @@ body {
   position: absolute;
   width: 145px;
   height: 145px;
-  background-color: #f5d94b;
+  background-color: #628eb3;
   border-radius: 50%;
   right: 47px;
   top: 52%;
@@ -342,9 +336,9 @@ body {
 }
 .wordCon .word {
   text-align: center;
-  -webkit-text-stroke: 2px #b67352;
+  -webkit-text-stroke: 2px #5c2c8f;
   color: transparent;
-  background: radial-gradient(circle at center, transparent, transparent -5%, #8cb9bd 1.2%, #8cb9bd 66%, transparent 66.2%, transparent 98%);
+  background: radial-gradient(circle at center, transparent, transparent -5%, #04aec7 1.2%, #04aec7 66%, transparent 66.2%, transparent 98%);
   position: relative;
   z-index: 10;
   transition: 1s;
@@ -355,6 +349,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   padding-top: 10px;
+  font-weight: 900;
 }
 .wordCon:hover .word {
   background-position: 292.5% 100%;
